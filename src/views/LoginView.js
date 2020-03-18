@@ -86,8 +86,17 @@ function Login2Page() {
             </Grid>
             <Grid item xs={12} md={4}>
                 <Card className={classes.card} square>
-                    <CardContent className="flex flex-col items-center justify-center p-32 md:p-48 md:pt-128 ">
-                        <Typography variant="h6" className="md:w-full mb-32">
+                    <CardContent
+                        style={{
+                            display: 'flex',
+                            padding: 32,
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                        className="flex flex-col items-center justify-center p-32 md:p-48 md:pt-128 "
+                    >
+                        <Typography style={{ marginBottom: 32 }} variant="h6" className="md:w-full mb-32">
                             LOGIN TO YOUR ACCOUNT
                         </Typography>
 
@@ -98,6 +107,7 @@ function Login2Page() {
                             onSubmit={handleSubmit}
                         >
                             <TextField
+                                style={{ marginBottom: 16 }}
                                 className="mb-16"
                                 label="Email"
                                 autoFocus
@@ -111,6 +121,7 @@ function Login2Page() {
                             />
 
                             <TextField
+                                style={{ marginBottom: 16 }}
                                 className="mb-16"
                                 label="Password"
                                 type="password"
@@ -130,6 +141,7 @@ function Login2Page() {
                             </div>
 
                             <Button
+                                style={{ marginTop: 16, width: '100%', marginLeft: 'auto' }}
                                 variant="contained"
                                 color="primary"
                                 className="w-full mx-auto mt-16"
@@ -140,27 +152,39 @@ function Login2Page() {
                             </Button>
                         </form>
 
-                        <div className="my-24 flex items-center justify-center">
-                            <Divider className="w-32" />
-                            <span className="mx-8 font-bold">OR</span>
-                            <Divider className="w-32" />
+                        <div
+                            style={{
+                                display: 'flex',
+                                paddingTop: 8,
+                                paddingBottom: 8,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}
+                        >
+                            <Divider style={{ width: 32 }} className="w-32" />
+                            <span style={{ marginLeft: 8, fontWeight: 'bold' }} className="mx-8 font-bold">
+                                OR
+                            </span>
+                            <Divider style={{ width: 32 }} className="w-32" />
                         </div>
-
-                        <Button variant="contained" color="secondary" size="small" className="normal-case w-192 mb-8">
+                        <Button
+                            style={{ width: '100%', marginBottom: 8 }}
+                            variant="contained"
+                            color="secondary"
+                            size="small"
+                        >
                             Log in with Google
                         </Button>
 
-                        <Button variant="contained" color="primary" size="small" className="normal-case w-192">
-                            Log in with Facebook
-                        </Button>
-
-                        <div className="flex flex-col items-center justify-center pt-32 pb-24">
-                            <span className="font-medium">Don't have an account?</span>
-                            {/* LINK */}
-                            <div className="font-medium" to="/pages/auth/register-2">
-                                Create an account
-                            </div>
-                        </div>
+                        <Grid container alignItems="center" direction="column" justify="center" spacing={10}>
+                            <Grid item xs={12}>
+                                <span className="font-medium">Don't have an account?</span>
+                                {/* LINK */}
+                                <div className="font-medium" to="/pages/auth/register-2">
+                                    Create an account
+                                </div>
+                            </Grid>
+                        </Grid>
                     </CardContent>
                 </Card>
             </Grid>
